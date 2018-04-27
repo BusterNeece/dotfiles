@@ -71,7 +71,7 @@ $chocoPackages = @(
 )
 
 Install-Scoop
-sudo Install-Chocolatey
+Install-Chocolatey
 
 Install-ScoopPackages $scoopPackages 
-sudo Install-ChocolateyPackages $chocoPackages
+Install-ChocolateyPackages $chocoPackages
