@@ -67,7 +67,7 @@ $chocoPackages = @(
 	'toggl',
 	'plexmediaplayer',
 	'k-litecodecpackfull',
-	'shutup10',
+	'shutup10'
 )
 
 Install-Scoop
