@@ -5,8 +5,8 @@ if((Get-ExecutionPolicy) -ne 'Unrestricted')
 }
 
 Function Install-Scoop {
-	# [Environment]::SetEnvironmentVariable("SCOOP", "$HOME\.scoop", "User")
-	# iex (new-object net.webclient).downloadstring('https://get.scoop.sh')
+	[Environment]::SetEnvironmentVariable("SCOOP", "$HOME\.scoop", "User")
+	iex (new-object net.webclient).downloadstring('https://get.scoop.sh')
 	
 	scoop install git
 	scoop install openssh sudo which
@@ -39,7 +39,6 @@ Function Install-ScoopPackages {
 $scoopPackages = @(
 	'7zip',
 	'cmder',
-	'hyper',
 	'notepad2',
 	'heidisql',
 	'gitkraken',
