@@ -5,4 +5,4 @@ iex (new-object net.webclient).downloadstring('https://get.scoop.sh')
 scoop install git openssh sudo which
 scoop bucket add Extras
 
-scoop install 7zip cmder gitkraken speccy etcher jetbrains-toolbox postman
+scoop install vscode 7zip cmder gitkraken speccy etcher jetbrains-toolbox postman
