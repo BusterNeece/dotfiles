@@ -18,7 +18,6 @@ sudo apt-get update
 sudo apt-get install -y lutris
 
 # Install DXVK
-sudo dpkg --add-architecture i386
 sudo add-apt-repository -y ppa:paulo-miguel-dias/pkppa
 sudo apt update && sudo apt upgrade
 sudo apt install -y libgl1-mesa-glx:i386 libgl1-mesa-dri:i386
