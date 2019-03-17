@@ -46,6 +46,9 @@ pulseaudio -k && sudo alsa force-reload
 # Fix Spotify HiDPI
 sudo sed -i 's/%U/--force-device-scale-factor=2.0 %U/' /var/lib/snapd/desktop/applications/spotify_spotify.desktop
 
+# Add docker.local to hosts
+echo "127.0.0.1  docker.local" | sudo tee -a /etc/hosts
+
 # Code repositories
 mkdir -p ~/Documents/Web/AzuraCast
 cd ~/Documents/Web/AzuraCast
