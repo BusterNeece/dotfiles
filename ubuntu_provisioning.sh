@@ -32,6 +32,17 @@ sudo sh -c "curl -L https://github.com/docker/compose/releases/download/${COMPOS
 sudo chmod +x /usr/local/bin/docker-compose
 sudo sh -c "curl -L https://raw.githubusercontent.com/docker/compose/${COMPOSE_VERSION}/contrib/completion/bash/docker-compose > /etc/bash_completion.d/docker-compose"
 
+# Install Cryptomator
+sudo add-apt-repository ppa:sebastian-stenzel/cryptomator
+sudo apt-get update
+sudo apt-get install cryptomator
+
+# Install keybase
+curl --remote-name https://prerelease.keybase.io/keybase_amd64.deb
+sudo dpkg -i keybase_amd64.deb
+sudo apt-get install -f
+# Execute run_keybase to run afterward
+
 # Use local clock at system level
 timedatectl set-local-rtc 1 --adjust-system-clock
 
