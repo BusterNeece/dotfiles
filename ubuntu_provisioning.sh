@@ -1,5 +1,7 @@
 #/usr/bin/env bash
 
+cd ~/Downloads
+
 sudo apt-get update
 
 # Core OS-level software
@@ -15,9 +17,10 @@ sudo snap install vscode --classic
 sudo snap install phpstorm --classic
 
 # Install Chrome
-cd ~/Downloads
 wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
 sudo dpkg -i google-chrome-stable_current_amd64.deb
+
+rm google-chrome-stable_current_amd64.deb
 
 # Install Docker
 curl -fsSL get.docker.com -o get-docker.sh
@@ -42,6 +45,23 @@ curl --remote-name https://prerelease.keybase.io/keybase_amd64.deb
 sudo dpkg -i keybase_amd64.deb
 sudo apt-get install -f
 # Execute run_keybase to run afterward
+
+# Install cloudflared for DNS-over-HTTPS Proxying
+wget https://bin.equinox.io/c/VdrWdbjqyF/cloudflared-stable-linux-amd64.deb
+sudo dpkg -i cloudflared-stable-linux-amd64.deb
+
+sudo mkdir -p /etc/cloudflared
+cloudflared_config=$(cat <<-END
+proxy-dns: true
+proxy-dns-upstream:
+ - https://1.1.1.1/dns-query
+ - https://1.0.0.1/dns-query
+END
+)
+echo "$cloudflared_config" | sudo tee /etc/cloudflared/config.yml
+
+sudo cloudflared service install
+sudo service cloudflared start
 
 # Use local clock at system level
 timedatectl set-local-rtc 1 --adjust-system-clock
