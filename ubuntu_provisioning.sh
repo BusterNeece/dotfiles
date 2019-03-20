@@ -24,6 +24,8 @@ rm google-chrome-stable_current_amd64.deb
 # Install GitKraken
 wget https://release.gitkraken.com/linux/gitkraken-amd64.deb
 sudo dpkg -i gitkraken-amd64.deb
+sudo apt-get install -f -y
+
 rm gitkraken-amd64.deb
 
 # Install Docker
