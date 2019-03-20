@@ -10,7 +10,7 @@ sudo apt-get install -y git sudo curl wget vim arc-theme gnome-tweak-tool fonts-
 sudo apt-get autoremove
 
 # Snap Software installation
-sudo snap install gitkraken spotify discord telegram-desktop 
+sudo snap install spotify discord telegram-desktop 
 
 sudo snap install slack --classic
 sudo snap install vscode --classic
@@ -19,8 +19,12 @@ sudo snap install phpstorm --classic
 # Install Chrome
 wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
 sudo dpkg -i google-chrome-stable_current_amd64.deb
-
 rm google-chrome-stable_current_amd64.deb
+
+# Install GitKraken
+wget https://release.gitkraken.com/linux/gitkraken-amd64.deb
+sudo dpkg -i gitkraken-amd64.deb
+rm gitkraken-amd64.deb
 
 # Install Docker
 curl -fsSL get.docker.com -o get-docker.sh
