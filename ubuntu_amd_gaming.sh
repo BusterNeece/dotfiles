@@ -11,11 +11,9 @@ sudo apt-get update
 sudo apt install -y --install-recommends winehq-staging
 
 # Install Lutris
-ver=$(lsb_release -sr); if [ $ver != "18.10" -a $ver != "18.04" -a $ver != "16.04" ]; then ver=18.04; fi
-echo "deb http://download.opensuse.org/repositories/home:/strycore/xUbuntu_$ver/ ./" | sudo tee /etc/apt/sources.list.d/lutris.list
-wget -q https://download.opensuse.org/repositories/home:/strycore/xUbuntu_$ver/Release.key -O- | sudo apt-key add -
+sudo add-apt-repository -y ppa:lutris-team/lutris
 sudo apt-get update
-sudo apt-get install -y lutris
+sudo apt-get install lutris
 
 # Install DXVK
 sudo add-apt-repository -y ppa:paulo-miguel-dias/pkppa
