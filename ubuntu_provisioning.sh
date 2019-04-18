@@ -13,7 +13,7 @@ sudo apt-get autoremove
 sudo snap install spotify discord telegram-desktop 
 
 sudo snap install slack --classic
-sudo snap install vscode --classic
+sudo snap install code --classic
 sudo snap install phpstorm --classic
 
 # Install Chrome
