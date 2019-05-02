@@ -9,6 +9,11 @@ sudo apt-get install -y git sudo curl wget vim arc-theme gnome-tweak-tool fonts-
 
 sudo apt-get autoremove
 
+# Grub Customizer
+sudo add-apt-repository -y ppa:danielrichter2007/grub-customizer
+sudo apt-get update
+sudo apt-get install -y grub-customizer
+
 # Flat Remix theme components
 sudo add-apt-repository -y ppa:daniruiz/flat-remix
 sudo apt-get update
