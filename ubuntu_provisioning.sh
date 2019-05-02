@@ -9,6 +9,11 @@ sudo apt-get install -y git sudo curl wget vim arc-theme gnome-tweak-tool fonts-
 
 sudo apt-get autoremove
 
+# Flat Remix theme components
+sudo add-apt-repository -y ppa:daniruiz/flat-remix
+sudo apt-get update
+sudo apt-get install -y flat-remix flat-remix-gnome flat-remix-gtk
+
 # Snap Software installation
 sudo snap install spotify discord telegram-desktop 
 
@@ -42,9 +47,9 @@ sudo chmod +x /usr/local/bin/docker-compose
 sudo sh -c "curl -L https://raw.githubusercontent.com/docker/compose/${COMPOSE_VERSION}/contrib/completion/bash/docker-compose > /etc/bash_completion.d/docker-compose"
 
 # Install Cryptomator
-sudo add-apt-repository ppa:sebastian-stenzel/cryptomator
+sudo add-apt-repository -y ppa:sebastian-stenzel/cryptomator
 sudo apt-get update
-sudo apt-get install cryptomator
+sudo apt-get install -y cryptomator
 
 # Install keybase
 curl --remote-name https://prerelease.keybase.io/keybase_amd64.deb
