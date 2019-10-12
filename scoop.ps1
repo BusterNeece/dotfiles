@@ -2,7 +2,15 @@
 
 iex (new-object net.webclient).downloadstring('https://get.scoop.sh')
 	
-scoop install git openssh sudo which
-scoop bucket add Extras
+scoop install git openssh sudo which aria2
 
-scoop install vscode 7zip cmder gitkraken speccy etcher jetbrains-toolbox postman
+# Fonts
+scoop bucket add nerd-fonts
+sudo scoop install cascadia-code
+
+# Often installed via Scoop
+scoop bucket add extras
+scoop isntall 7zip cmder gitkraken speccy etcher postman
+
+# Sometimes installed via Scoop or Ninite
+scoop install vscode jetbrains-toolbox
