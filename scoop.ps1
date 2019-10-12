@@ -6,7 +6,7 @@ scoop install git openssh sudo which aria2
 
 # Fonts
 scoop bucket add nerd-fonts
-sudo scoop install cascadia-code
+sudo scoop install cascadia-code firacode
 
 # Often installed via Scoop
 scoop bucket add extras
