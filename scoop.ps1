@@ -13,7 +13,7 @@ scoop install --global git openssh sudo which aria2
 
 # Often installed via Scoop
 scoop bucket add extras
-scoop isntall 7zip cmder gitkraken speccy etcher postman
+scoop install 7zip cmder gitkraken speccy etcher postman
 
 # Sometimes installed via Scoop or Ninite
 scoop install vscode jetbrains-toolbox
