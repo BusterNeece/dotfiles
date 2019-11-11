@@ -95,6 +95,23 @@ sudo sed -i 's/%U/--force-device-scale-factor=2.0 %U/' /var/lib/snapd/desktop/ap
 
 # Add docker.local to hosts
 echo "127.0.0.1  docker.local" | sudo tee -a /etc/hosts
+echo "127.0.0.1  azuracast.local" | sudo tee -a /etc/hosts
+
+# Install homebrew (for mkcert)
+sudo apt-get install -y build-essential curl file git
+
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/Linuxbrew/install/master/install.sh)"
+
+test -d ~/.linuxbrew && eval $(~/.linuxbrew/bin/brew shellenv)
+test -d /home/linuxbrew/.linuxbrew && eval $(/home/linuxbrew/.linuxbrew/bin/brew shellenv)
+test -r ~/.bash_profile && echo "eval \$($(brew --prefix)/bin/brew shellenv)" >>~/.bash_profile
+echo "eval \$($(brew --prefix)/bin/brew shellenv)" >>~/.profile
+
+# Install mkcert
+sudo apt-get install -y libnss3-tools 
+brew install mkcert
+
+mkcert -install
 
 # Code repositories
 mkdir -p ~/Documents/Web/AzuraCast
@@ -102,6 +119,7 @@ cd ~/Documents/Web/AzuraCast
 
 git clone https://github.com/AzuraCast/AzuraCast.git
 git clone https://github.com/AzuraCast/docker-azuracast-web-v2.git
+git clone https://github.com/AzuraCast/docker-azuracast-nginx-proxy.git
 git clone https://github.com/AzuraCast/docker-azuracast-db.git
 git clone https://github.com/AzuraCast/docker-azuracast-influxdb.git
 git clone https://github.com/AzuraCast/docker-azuracast-redis.git
@@ -111,5 +129,11 @@ cd AzuraCast
 
 cp azuracast.dev.env azuracast.env
 cp docker-compose.dev.yml docker-compose.yml
+
+cd util/local_ssl
+mkcert azuracast.local
+mv azuracast.local-key.pem azuracast.local.key
+mv azuracast.local.pem azuracast.local.crt
+cd ../..
 
 echo "Initial provision complete. Reboot necessary for Docker."
