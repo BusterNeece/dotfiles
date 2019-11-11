@@ -1,12 +1,15 @@
 # Install "Developer Mode" tools first and set execution policy to RemoteSigned
 
 iex (new-object net.webclient).downloadstring('https://get.scoop.sh')
-	
-scoop install git openssh sudo which aria2
 
-# Fonts
-scoop bucket add nerd-fonts
-sudo scoop install cascadia-code firacode
+# If using the W: second partition
+$env:SCOOP='W:\Scoop'
+[Environment]::SetEnvironmentVariable('SCOOP', $env:SCOOP, 'User')
+
+$env:SCOOP_GLOBAL='W:\ScoopGlobal'
+[Environment]::SetEnvironmentVariable('SCOOP_GLOBAL', $env:SCOOP_GLOBAL, 'Machine')
+
+scoop install --global git openssh sudo which aria2
 
 # Often installed via Scoop
 scoop bucket add extras
