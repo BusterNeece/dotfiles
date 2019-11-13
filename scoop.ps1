@@ -9,7 +9,7 @@ $env:SCOOP_GLOBAL='W:\ScoopGlobal'
 
 iex (new-object net.webclient).downloadstring('https://get.scoop.sh')
 
-scoop install --global git openssh sudo which aria2
+scoop install --global git openssh sudo which aria2 gpg
 
 # Often installed via Scoop
 scoop bucket add extras
