@@ -4,7 +4,7 @@ export DEBIAN_FRONTEND=noninteractive
 export USERNAME=`whoami`
 
 # Configure Git
-git config --global user.name Buster "Silver Eagle" Neece
+git config --global user.name "Buster \"Silver Eagle\" Neece"
 git config --global user.email loobalightdark@gmail.com
 git config --global init.defaultBranch main
 
