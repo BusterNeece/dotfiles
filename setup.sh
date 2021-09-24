@@ -7,6 +7,7 @@ export USERNAME=`whoami`
 git config --global user.name "Buster \"Silver Eagle\" Neece"
 git config --global user.email loobalightdark@gmail.com
 git config --global init.defaultBranch main
+git config --global commit.gpgsign true
 
 # Update and install required packages
 sudo apt-get update
